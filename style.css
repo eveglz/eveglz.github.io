@@ -1,0 +1,164 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    background-color: #F8F8F8;
+}
+
+.footer{
+    background: linear-gradient(#f8f8f878, #f7c9737f);
+}
+
+.navbar-brand, .navbar-brand:hover{
+    color: #F7C873;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.nav-link{
+    color: #434343;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    justify-self: center;
+}
+
+.nav-item{
+    align-content: center;
+}
+
+li.contact a, a i.fa-envelope {
+    background-color: #F7C873;
+    border-radius: 2rem;
+}
+
+ul.dropdown-menu{
+    top: auto!important;
+    left: auto!important;
+}
+
+.tag{
+    color: #434343;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #434343;
+    border-radius: 2rem;
+    padding: 8px 16px;
+}
+
+.evelyn{
+    color: #434343;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.more, .more i{
+    background-color: #FAEBCD;
+}
+
+h1, h2, h3, p{
+    color: #434343;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h1{
+    font-size: 2.1vw;
+}
+
+h2{
+    font-size: 1.8vw;
+}
+
+h3{
+    font-size: 1.3vw;
+}
+
+em{
+    color: #F7C873;
+    font-style: normal;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+img.hero{
+    border-radius: 2rem 2rem 0rem 0rem;
+    box-shadow: 36px 0px 80px 0px rgba(0, 0, 0, 0.15), -36px 0px 80px 0px rgba(0, 0, 0, 0.15);
+}
+
+h1.title{
+    font-weight: 900;
+    font-size: 2.6vw;
+    background-color: #F8F8F8;
+}
+
+
+.container-b {
+      position: relative;
+      width: 600px; /* Ajusta según tamaño de la laptop */
+      margin: 0 auto;
+    }
+
+    .laptop-img {
+      width: 100%;
+      display: block;
+    }
+
+    .screen {
+      position: absolute;
+      top: 4.8%;
+      left: 11.8%;
+      width: 76.5%;
+      height: 75.8%;
+      overflow: auto;
+      border-radius: 0px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      scrollbar-width: none;
+    }
+
+    .screen-pc {
+      position: absolute;
+      top: 7.5%;
+      left: 6.8%;
+      width: 86.3%;
+      height: 71.5%;
+      overflow: auto;
+      border-radius: 0px;
+      scrollbar-width: none;
+    }
+
+    a{
+        text-decoration: none;
+        height: fit-content;
+    }
+
+    span{
+        display: block;
+        font-family: monospace;
+        font-size: 2.5vw;
+        white-space: nowrap;
+        border-right: 2px solid;
+        width: 13ch;
+        animation: typing 2s steps(14), blink .5s infinite step-end alternate;
+        overflow: hidden;
+    }
+
+   @keyframes typing {
+     from { width: 0 }
+   }
+
+   @keyframes blink {
+     50% { border-color: transparent; }
+   }
