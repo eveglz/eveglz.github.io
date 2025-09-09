@@ -26,14 +26,26 @@ applyNavScrolled();
 });
 
 //Copy Email
-function copiarAlPortapapeles() {
-  navigator.clipboard.writeText("eveglz@outlook.com")
-    .then(() => {
-      console.log('Texto copiado al portapapeles');
-      alert('¡Texto copiado con éxito!');
-    });
+// Función copiar + tooltip
+function copiarAlPortapapeles(e) {
+  const button = e.currentTarget;
+  const email = button.getAttribute("data-email");
+  const tooltip = button.querySelector(".tooltip");
+
+  navigator.clipboard.writeText(email).then(() => {
+    tooltip.classList.add("show");
+
+    // Ocultar tooltip después de 1.5s
+    setTimeout(() => {
+      tooltip.classList.remove("show");
+    }, 1500);
+  });
 }
-$('.copy-email').on('click', copiarAlPortapapeles);
+
+document.querySelectorAll(".copy-email").forEach(btn => {
+  btn.addEventListener("click", copiarAlPortapapeles);
+});
+
 $(window).scrollTop(0);
 
 //Before & After

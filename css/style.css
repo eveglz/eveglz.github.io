@@ -539,6 +539,19 @@ div.rounded-circle{
   border-color: var(--blur-color) transparent transparent transparent;
 }
 
+/* Tooltip oculto por defecto */
+.copy-email .tooltip {
+  width: auto;
+  bottom: 100%; /* encima del dot */
+  text-align: center;
+}
+
+/* Clase visible */
+.copy-email .tooltip.show {
+  opacity: 1;
+}
+
+
 /* Mostrar tooltip al hover */
 .dot:hover .tooltip {
   opacity: 1;
