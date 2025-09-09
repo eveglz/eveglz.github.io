@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --background-color: #D7C2AF;
+    --titles-color: #B24B43;
+    --text-color: #333333;
+    --alt-text-color: #D7C2AF;
+    --blur-color: #DFAE9D;
+    --box-color: #EFE7DF;
+    --text-size: 24.72px;
+    --size: 60vw;          /* diámetro del círculo */
+    --blur: 15vw;           /* desenfoque (filter) */
+    --duration: 10s;        /* duración del loop */
+}
+
+nav{
+    position: fixed!important;
+    justify-self: anchor-center;
+    background-color: transparent;
+    transition: all 0.3s;
+    border-radius: 3rem;
+    z-index: 99;
+    top: 1rem;
+}
+
+nav.scrolled {
+  background-color: #ffffff66;
+  backdrop-filter: saturate(150%) blur(8px);
+}
+
+.stage {
+  position: absolute; /*O fixed?*/
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.blob{
+    position:absolute;
+    width:var(--size);
+    height:var(--size);
+    border-radius:50%;
+    background: var(--blur-color);
+    filter: blur(var(--blur));
+    transform: translate(-50%, -75%);
+    left:50%; top:50%;
+    z-index: -1;
+}
+
+.blob.one{
+    animation: eight var(--duration) linear infinite;
+    animation-fill-mode: both;
+}
+
+.blob.two{
+    animation: eight var(--duration) linear infinite;
+    animation-delay: calc(var(--duration) / 2);
+    animation-fill-mode: both;
+}
+
+@keyframes eight {
+    0%   { left: 0; top: 50%; }
+    12.5%{ left: 25%; top: 30%; }
+    25%  { left: 50%; top: 50%; }
+    37.5%{ left: 75%; top: 70%; }
+    50%  { left: 100%; top: 50%; }
+    62.5%{ left: 75%; top: 30%; }
+    75%  { left: 50%; top: 50%; }
+    87.5%{ left: 25%; top: 70%; }
+    100% { left: 0; top: 50%; }
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-medium {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lato-semibold {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+    background-color: var(--background-color)!important;
+    overflow-x: hidden;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 64px);
+  color: var(--titles-color);
+}
+
+h2 {
+  font-size: clamp(20px, 3.125vw, 40px);
+  color: var(--titles-color);
+}
+
+h3, .nav-link {
+  font-size: clamp(14px, 1.875vw, 24px);
+  color: var(--titles-color);
+}
+
+p {
+  font-size: clamp(14px, 1.875vw, 24px);
+  color: var(--text-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+a[aria-current="page"] {
+    color: var(--titles-color);
+    border-radius: 4rem;
+    padding: 0.5vw 1.6vw!important;
+    align-content: center;
+    background-color: #ffffff66;
+}
+
+.dropdown-menu{
+    justify-self: anchor-center;
+    background-color: #ffffff66;
+    border: none;
+    text-align: center;
+    border-radius: 1rem;
+    color: var(--titles-color);
+}
+
+.dropdown-item{
+    color: var(--titles-color);
+}
+
+.dropdown-item:hover, 
+.dropdown-item:focus {
+  background-color: transparent;
+  color: var(--titles-color);
+}
+
+.nav-link:hover,
+.nav-link:active, 
+.nav-link:focus,
+.nav-link.show {
+  color: var(--titles-color)!important;
+}
+
+.card{
+    background-color: #ffffff66;
+    border: none;
+    border-radius: 2rem;
+}
+
+a.card{
+    cursor: pointer;
+    transition: box-shadow 1s ease;
+}
+a.card:hover{
+    box-shadow: 8px 8px 32px var(--blur-color);
+}
+
+@media (min-width: 768px) {
+.img-fluid[alt="DeviceKNA"], .img-fluid[alt="DeviceVF"]{
+    max-width: 120%;
+    transition: all 1.5s ease;
+}
+.img-fluid[alt="DeviceKNA"]{
+    transform: translateX(-10vw);
+}
+
+.card:hover .img-fluid[alt="DeviceKNA"]{
+    max-width: 100%;
+    transform: translateX(0);
+    transform: rotate(5deg);
+}
+.card:hover .img-fluid[alt="DeviceVF"]{
+    max-width: 100%;
+    transform: rotate(-5deg);
+}
+}
+
+@media (max-width: 767.9px) {
+.img-fluid{
+    max-width: 100%;
+}
+.img-fluid[alt="DeviceKNA"]{
+    transform: rotate(5deg);
+}
+.img-fluid[alt="DeviceVF"]{
+    transform: rotate(-5deg);
+}
+}
+
+.copy-email{
+    background-color: #EFE7DF;
+    z-index: 1;
+    cursor: pointer;
+}
+.copy-email .card-body{
+    transition: all 1s ease;
+}
+.copy-email:hover .card-body{
+    filter: drop-shadow(2px 2px 6px var(--blur-color));
+}
+
+.hover-icon i {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hover-icon:hover i {
+    transform: translateY(0);
+    opacity: 1;
+}
+.hover-icon:hover i.fa-envelope {
+  transform: translateY(2px);
+}
+
+#cv{
+    margin-top: -2rem;
+    height: clamp(60px, 6.7vw, 80px);
+}
+
+div#cv .btn{
+    background-color: var(--titles-color);
+    color: var(--background-color);
+    font-size: clamp(14px, 1.875vw, 24px);
+    border-radius: 0 0 1rem 1rem;
+    transition: padding-top 0.3s ease, height 0.3s ease;
+    height: clamp(60px, 6vw, 80px);
+    padding-top: clamp(33px, 2.6vw, 37px);
+    right: 0;
+}
+
+div#cv .btn:hover{
+    background-color: var(--titles-color);
+    color: var(--background-color);
+    height: clamp(68px, 6.8vw, 88px);
+    padding-top: clamp(41px, 3.4vw, 45px);
+    cursor: pointer;
+}
+
+[lang] {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity .6s ease;
+}
+
+[lang].active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative; /* mantiene el flujo */
+}
+
+[lang].exiting {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+}
+
+.inverted{
+  background-color: var(--titles-color);
+  color: var(--background-color);
+}
+
+@media (min-width: 768px) {
+  .responsive{
+    max-width: 65%;
+  }
+}
+@media (max-width: 767.9px) {
+  .responsive{
+    max-width: 85%;
+  }
+}
+
+.screen {
+  position: absolute;
+  top: 4.8%;
+  left: 11.8%;
+  width: 76.5%;
+  height: 75.8%;
+  overflow: auto;
+  border-radius: 0px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  scrollbar-width: none;
+}
+
+/* .laptop-frame {
+  position: relative;
+  display: inline-block;
+  width: 100%;       
+  max-width: 800px;   
+}
+
+.laptop-frame img {
+  display: block;
+  width: 100%;       
+  height: auto;
+} */
+
+/* la pantalla dentro del laptop */
+.frame {
+  position: absolute;
+  top: 9%;
+  left: 1.5%;
+  width: 97%;
+  height: 88.8%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* asegura que no se deforme */
+  object-position: top center;
+}
+
+
+.text-justify{
+  text-align : justify;
+}
+.justify-self-center{
+  justify-self: center;
+}
+div.rounded-circle{
+  aspect-ratio: 1;
+}
+
+.laptop-img {
+  width: 100%;
+  display: block;
+}
+
+.screen {
+  position: absolute;
+  top: 4.8%;
+  left: 11.8%;
+  width: 76.5%;
+  height: 75.9%;
+  overflow: auto;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.fade-img {
+  transition: opacity 0.3s ease-in-out;
+}
+.fade-out {
+  opacity: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.5rem;  
+  height: 1.8rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-color); 
+  border: 0.12rem solid var(--titles-color);   
+  border-radius: 2rem;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 1.2rem;
+  width: 1.2rem;
+  left: 0.25rem;
+  top: 0.2rem;
+  background-color: var(--titles-color); 
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--titles-color);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(1.7rem);
+  background-color: var(--background-color); 
+}
+
+.switch input:focus + .slider {
+  box-shadow: 0 0 0 0.25rem var(--blur-color);
+}
+
+@media (max-width: 576px) {
+  .switch {
+    width: 2.5rem;
+    height: 1.3rem;
+  }
+
+  .slider::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    top: 0.1rem;
+    left: 0.2rem;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(1rem);
+  }
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+/* 🔵 Dot base */
+.dot {
+  position: absolute;
+  display: block;          /* 👈 evita inline-block deformando */
+  width: 24px;
+  height: 24px;
+  background-color: var(--titles-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.5s infinite;
+  line-height: 0;          /* 👈 quita espacio vertical extra */
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(223,174,157, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(223,174,157, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(223,174,157, 0);
+  }
+}
+
+
+/* 📌 Tooltip */
+.tooltip {
+  position: absolute;
+  width: 33vw;
+  bottom: 135%; /* encima del dot */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--blur-color);
+  backdrop-filter: saturate(150%) blur(8px);
+  color: var(--titles-color);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(14px, 1.875vw, 24px);
+  padding: 6px 10px;
+  border-radius: 1rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* triangulito abajo */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--blur-color) transparent transparent transparent;
+}
+
+/* Mostrar tooltip al hover */
+.dot:hover .tooltip {
+  opacity: 1;
+}
